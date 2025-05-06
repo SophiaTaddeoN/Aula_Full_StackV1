@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^5.1.0"
+  },
+  "name": "servidor",
+  "version": "1.0.0",
+  "description": "Servidor da aula fullstack",
+  "main": "servidor.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SophiaTaddeoN/Aula_Full_StackV1.git"
+  },
+  "author": "Sophia Taddeo Nascimento",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SophiaTaddeoN/Aula_Full_StackV1/issues"
+  },
+  "homepage": "https://github.com/SophiaTaddeoN/Aula_Full_StackV1#readme"
+}
