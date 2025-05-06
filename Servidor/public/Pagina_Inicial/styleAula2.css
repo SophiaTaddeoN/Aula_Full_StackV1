@@ -1,0 +1,33 @@
+.t1 {
+  color: darkblue;
+}
+.t2 {
+  color: blue;
+}
+
+body {
+  background-color: cornflowerblue;
+}
+
+#background {
+  background-color: cornflowerblue;
+}
+
+.centro :hover {
+  background-color: mintcream;
+}
+p {
+  color: #073763;
+}
+
+table {
+  color: midnightblue;
+  font-size: 18pt;
+}
+
+.centro {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
