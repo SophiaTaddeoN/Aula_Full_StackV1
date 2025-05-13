@@ -1,0 +1,152 @@
+body {
+  background-color: lightgrey;
+  min-height: 100vh;
+  display: block;
+  position: relative;
+  padding-bottom: 50px;
+}
+
+.comic {
+  font-family: Comic Sans MS;
+  font-size: 15pt;
+}
+
+.titulo_01 {
+  color: darkgreen;
+  border: 4px solid midnightblue;
+  margin: 0px;
+  padding: 30px;
+  background-color: blanchedalmond;
+  text-align: center;
+}
+
+#img_01 {
+  position: absolute;
+  top: 23px;
+  left: 30px;
+  height: 110px;
+}
+
+#img_02 {
+  position: absolute;
+  top: 1px;
+  right: 30px;
+  height: 160px;
+}
+
+.imgs {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.introducao {
+  text-align: center;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#texto_introducao {
+  text-align: center;
+  color: indigo;
+  font-family: sans-serif;
+  font-size: 150%;
+}
+
+.livro {
+  text-align: center;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#img_03 {
+  height: 310px;
+}
+
+#img_04 {
+  height: 310px;
+}
+
+#img_05 {
+  height: 310px;
+}
+
+#menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 15px;
+  background-color: lightskyblue;
+}
+
+.bgc {
+  background-color: lightskyblue;
+  padding: 15px;
+}
+
+.vdo_maps {
+  text-align: center;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#iframe_01,
+#iframe_02 {
+  height: 300px;
+  width: 300px;
+}
+
+.Contatos {
+  text-align: center;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#table {
+  margin: 20px auto;
+  border: 3px dashed red;
+}
+
+.red_table {
+  color: red;
+}
+
+td {
+  padding: 5px;
+  text-align: center;
+}
+
+.site {
+  position: relative;
+  top: 20px;
+  left: 500px;
+  width: 500px;
+  padding-bottom: 3px;
+  background-color: yellow;
+  text-align: left;
+}
+
+.semestre {
+  position: absolute;
+  bottom: -1;
+  width: 100%;
+  background: blanchedalmond;
+  color: black;
+  text-align: center;
+  padding: 60px 0;
+}
+
+#img_06 {
+  position: absolute;
+  bottom: -100px;
+  left: 30px;
+  height: 110px;
+}
+
+#img_07 {
+  position: absolute;
+  bottom: -100px;
+  right: 30px;
+  height: 110px;
+}

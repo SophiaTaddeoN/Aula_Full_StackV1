@@ -1,0 +1,55 @@
+body {
+  background-color: pink;
+}
+
+#parte1 {
+  text-align: center;
+  font-size: larger;
+}
+
+#box0 {
+  display: flex;
+  justify-content: center;
+
+  flex-direction: column;
+  align-items: center;
+}
+#box1 {
+  height: 50px;
+  width: 200px;
+}
+#botao {
+  height: 35px;
+  width: 170px;
+}
+
+#resposta {
+  font-size: large;
+  color: white;
+  background-color: blueviolet;
+}
+
+#text {
+  font-weight: bolder;
+}
+
+#maiores {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+#menores {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.numeros {
+  max-width: 150px;
+  word-wrap: break-word;
+  white-space: normal;
+  display: block;
+}

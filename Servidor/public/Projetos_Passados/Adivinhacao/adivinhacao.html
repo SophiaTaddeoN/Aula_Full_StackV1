@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>LAB4</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="parte1">
+      <h1>Jogo da Adivinhação!</h1>
+    </div>
+
+    <div id="box0">
+      <input type="number" id="box1" />
+
+      <div>
+        <input
+          type="button"
+          value="Clique aqui"
+          id="botao"
+          onclick="comparacao()"
+        />
+      </div>
+      <div>
+        <p id="resposta"></p>
+      </div>
+      <div>
+        <p id="text">Tentativas pequenas:</p>
+        <ul id="menores" class="numeros"></ul>
+      </div>
+      <div>
+        <p id="text">Tentativas grandes:</p>
+        <ul id="maiores" class="numeros"></ul>
+      </div>
+    </div>
+
+    <script src="script.js" type="text/javascript"></script>
+  </body>
+</html>

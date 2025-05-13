@@ -1,0 +1,30 @@
+#canva1,
+#canva2 {
+  border-top: 2px black solid;
+  border-bottom: 2px black solid;
+  border-left: 2px black solid;
+  border-right: 2px black solid;
+}
+.canvas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+#canva2 {
+  background-color: aquamarine;
+}
+#canva1 {
+  background-color: white;
+}
+
+#text {
+  font-size: xx-large;
+  font-family: cursive;
+  text-align: center;
+}
+
+body {
+  background-color: cornsilk;
+}
