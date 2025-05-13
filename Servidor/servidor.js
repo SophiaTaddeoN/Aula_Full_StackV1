@@ -13,32 +13,42 @@ app.set('views', './views'); // pode usar o body parser
 
 
 //ROTAS 
-app.get('/',(req,res) => {
-    res.redirect("/Pagina_Inicial/project.html")
+app.get('/',(req,resposta) => {
+    resposta.redirect("/Pagina_Inicial/project.html")
 })
 
 
 
 
 //ATV GET POST TEMPLATE
+let usuario = []
 
 app.get('/usuario',(requisicao,resposta) =>{ 
     resposta.redirect("/Projetos_Passados/Get_Post_Template/usuario.html")
 })
-
+app.get("/cadastrar",(requisicao,resposta) =>{
+    resposta.redirect("/Projetos_Passados/Get_Post_Template/login.html")
+})
+app.get("/logar", function(requisicao,resposta){
+    resposta.redirect("/Projetos_Passados/Get_Post_Template/login.html")
+})
 
 app.post('/resposta_cadastro', (requisicao,resposta) =>{
     resposta.redirect("/Projetos_Passados/Get_Post_Template/login.html")
 })
 
 
-app.get("/cadastrar", function(requisicao, resposta){
+app.post("/cadastrar", function(requisicao, resposta){
     let nome = requisicao.query.nome;
     let login = requisicao.query.login;
     let senha = requisicao.query.senha;
     let nasc = requisicao.query.nascimento;
+    usuario.push({nome,login,senha,nasc})
+    console.log("Cadastro:",nome,login,senha,nasc)
+    resposta.redirect("/logar")
+})
 
-    console.log(nome, login, senha, nasc)
+app.get("/cadastrar",(requisicao,resposta) =>{
     resposta.redirect("/Projetos_Passados/Get_Post_Template/cadastro.html")
 })
 
@@ -46,27 +56,12 @@ app.get("/cadastrar", function(requisicao, resposta){
 app.post('/logar', function(requisicao, resposta){
     let login = requisicao.body.login;
     let senha = requisicao.body.senha;
-    console.log(login, senha);
-
-    var data = {db_login: login, db_senha: senha}
-
-    usuarios.find(data).toArray(function(err, items){
-        console.log(items)
-        if(items.length == 0){
-            resposta.render("resposta_login",{status: "usuario/senha não encontrado"});
-        }else if(err){
-            resposta.render("resposta_login",{status: "erro ao logar"});
-        }else{
-            resposta.render("resposta_login",{status: "usuario "+login+" logado"});
-        }
-    })
-
+    console.log("Logar:",login,senha);
+    let encontrado = usuario.find(u=>u.login===login&&u.senha===senha)
 })
 
-app.post('/resposta_ejs', (requisicao,resposta) =>{
-    resposta.redirect("/views/resposta.ejs")
+
+app.get("/logar", function(requisicao,resposta){
+    resposta.redirect("/Projetos_Passados/Get_Post_Template/login.html")
 })
 
-app.get('/resposta_ejs', (requisicao,resposta) =>{
-    resposta.redirect("/views/resposta.ejs")
-})
