@@ -1,8 +1,46 @@
-body{
-    background-color: pink;
+body {
+  background-color: #ffe4f2;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
 }
 
-.centro{
-    display: flex;
-    justify-content: center;
+.centro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  text-align: center;
+}
+
+#borda {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 4px dashed hotpink;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(255, 105, 180, 0.3);
+}
+
+.block {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+button {
+  background-color: hotpink;
+  color: white;
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+button:hover {
+  background-color: #ff6aa7;
 }

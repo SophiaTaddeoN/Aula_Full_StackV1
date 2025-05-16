@@ -29,46 +29,46 @@ app.set("views", "./views"); // PODE USAR O BODYPARSER
 
 // GET É USADO QUANDO VOCÊ QUER PEGAR INFORMAÇÕES DO SERVIDOR
 // POST É USADO PARA ENVIAR DADOS PARA O SERVIDOR
+
 //ROTAS
 app.get("/", (req, resposta) => {
   resposta.redirect("/Pagina_Inicial/project.html");
 });
 
-//ATV GET POST TEMPLATE
-// let usuario = [];
+// Exibe o formulário de cadastro (redirect para o HTML estático)
+app.get("/cadastra", (req, res) => {
+  res.redirect("/Projetos_Passados/Get_Post_Template/cadastro.html");
+});
 
-// app.get("/usuario", (requisicao, resposta) => {
-//   resposta.redirect("/Projetos_Passados/Get_Post_Template/usuario.html");
-// });
-// app.get("/cadastrar", (requisicao, resposta) => {
-//   resposta.redirect("/Projetos_Passados/Get_Post_Template/cadastro.html");
-// });
-// app.get("/logar", function (requisicao, resposta) {
-//   resposta.redirect("/Projetos_Passados/Get_Post_Template/login.html");
-// });
+// Exibe o formulário de login
+app.get("/login", (req, res) => {
+  res.redirect("/Projetos_Passados/Get_Post_Template/login.html");
+});
 
-// app.post("/cadastrar", function (requisicao, resposta) {
-//   let nome = requisicao.query.nome;
-//   let login = requisicao.query.login;
-//   let senha = requisicao.query.senha;
-//   let nasc = requisicao.query.nascimento;
-//   usuario.push({ nome, login, senha, nasc });
-//   console.log("Cadastro:", nome, login, senha, nasc);
-//   resposta.render("resposta.ejs", {
-//     mensagem: "Usuario cadastrado com sucesso!",
-//     usuario: nome,
-//     login: email,
-//   });
-//   resposta.redirect("/logar");
-// });
+// Recebe o POST de cadastro, renderiza resposta.ejs
+app.post("/cadastrado", (req, res) => {
+  const { nome, login, senha, nascimento } = req.body;
+  res.render("resposta.ejs", {
+    nome: nome,
+    login: login,
+    senha: "",
+    nasc: nascimento,
+  });
+});
 
-// app.post("/logar", function (requisicao, resposta) {
-//   let login = requisicao.body.login;
-//   let senha = requisicao.body.senha;
-//   console.log("Logar:", login, senha);
-//   let encontrado = usuario.find((u) => u.login === login && u.senha === senha);
-// });
+// Recebe o POST de login, renderiza resposta.ejs
+app.post("/login", function (req, res) {
+  let login = req.body.login;
+  let senha = req.body.senha;
 
-// app.post("resposta_ejs", function (requisicao, resposta) {
-//   resposta.render("/views/resposta.ejs");
-// });
+  console.log(login, senha);
+
+  // resposta usando EJS com mensagem de sucesso
+  res.render("resposta.ejs", {
+    mensagem: "Login recebido com sucesso!",
+    nome: "",
+    login: login,
+    senha: "",
+    nasc: "",
+  });
+});
