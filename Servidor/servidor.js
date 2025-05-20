@@ -35,6 +35,7 @@ app.get("/", (req, resposta) => {
   resposta.redirect("/Pagina_Inicial/project.html");
 });
 
+//GET POST E TEMPLATE
 // Exibe o formulário de cadastro (redirect para o HTML estático)
 app.get("/cadastra", (req, res) => {
   res.redirect("/Projetos_Passados/Get_Post_Template/cadastro.html");
@@ -65,6 +66,46 @@ app.post("/login", function (req, res) {
 
   // resposta usando EJS com mensagem de sucesso
   res.render("resposta.ejs", {
+    mensagem: "Login recebido com sucesso!",
+    nome: "",
+    login: login,
+    senha: "",
+    nasc: "",
+  });
+});
+
+//UPDATE E DELETE
+
+// Exibe o formulário de cadastro (redirect para o HTML estático)
+app.get("/cadastrado_c", (req, res) => {
+  res.redirect("/Projetos_Passados/Update_Delete/cadastro_usuario_c.html");
+});
+
+// Exibe o formulário de login
+app.get("/logado_c", (req, res) => {
+  res.redirect("/Projetos_Passados/Update_Delete/login_usuario_c.html");
+});
+
+// Recebe o POST de cadastro, renderiza resposta.ejs
+app.post("/cadastra_c", (req, res) => {
+  const { nome, login, senha, nascimento } = req.body;
+  res.render("resposta_usuario.ejs", {
+    nome: nome,
+    login: login,
+    senha: "",
+    nasc: nascimento,
+  });
+});
+
+// Recebe o POST de login, renderiza resposta.ejs
+app.post("/logar_c", function (req, res) {
+  let login = req.body.login;
+  let senha = req.body.senha;
+
+  console.log(login, senha);
+
+  // resposta usando EJS com mensagem de sucesso
+  res.render("resposta_usuario.ejs", {
     mensagem: "Login recebido com sucesso!",
     nome: "",
     login: login,
