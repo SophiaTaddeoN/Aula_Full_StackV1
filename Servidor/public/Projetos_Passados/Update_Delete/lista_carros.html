@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lista de Carros</title>
+    <link
+      rel="stylesheet"
+      href="/Projetos_Passados/Update_Delete/Aula12style.css"
+    />
+  </head>
+  <body>
+    <h1>Carros Disponíveis</h1>
+    <table
+      border="1"
+      style="margin: auto; background-color: #e0f0ff; text-align: center"
+    >
+      <tr>
+        <th>Marca</th>
+        <th>Modelo</th>
+        <th>Ano</th>
+        <th>Quantidade</th>
+        <th>Ações</th>
+      </tr>
+      <% carros.forEach(function(carro) { %>
+      <tr>
+        <td><%= carro.Marca %></td>
+        <td><%= carro.Modelo %></td>
+        <td><%= carro.Ano %></td>
+        <td><%= carro.Qtde_disponivel %></td>
+        <td>
+          <a href="/gerencia_carros/<%= carro._id %>">Gerenciar</a>
+        </td>
+      </tr>
+      <% }); %>
+    </table>
+    <br />
+    <a href="/novo_carro">Cadastrar Novo Carro</a>
+  </body>
+</html>

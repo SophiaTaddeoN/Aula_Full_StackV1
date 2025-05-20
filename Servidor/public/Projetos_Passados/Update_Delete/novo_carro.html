@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cadastrar Novo Carro</title>
+    <link
+      rel="stylesheet"
+      href="/Projetos_Passados/Update_Delete/Aula12style.css"
+    />
+  </head>
+  <body>
+    <h1>Cadastrar Novo Carro</h1>
+    <form action="/carros/inserir" method="POST">
+      <label>Marca: <input type="text" name="Marca" required /></label><br />
+      <label>Modelo: <input type="text" name="Modelo" required /></label><br />
+      <label>Ano: <input type="number" name="Ano" required /></label><br />
+      <label
+        >Quantidade disponível:
+        <input type="number" name="Qtde_disponivel" required /> </label
+      ><br />
+      <button type="submit">Cadastrar</button>
+    </form>
+    <br />
+    <a href="/lista_carros">Voltar para Lista</a>
+  </body>
+</html>

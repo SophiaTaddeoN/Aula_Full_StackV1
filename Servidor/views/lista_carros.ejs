@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Lista de Carros</title>
+    <link
+      rel="stylesheet"
+      href="/Projetos_Passados/Update_Delete/Aula12style.css"
+    />
+  </head>
+  <body>
+    <h1>Carros Disponíveis</h1>
+    <% if (carros.length === 0) { %>
+    <p>Nenhum carro cadastrado.</p>
+    <% } else { %>
+    <ul>
+      <% carros.forEach(function(carro) { %>
+      <li>
+        <strong><%= carro.marca %> <%= carro.modelo %></strong> - Qtde
+        disponível: <%= carro.qtde_disponivel %> <% if (carro.qtde_disponivel >
+        0) { %>
+        <form
+          action="/vender_carro/<%= carro._id %>"
+          method="POST"
+          style="display: inline"
+        >
+          <button type="submit">Vender</button>
+        </form>
+        <% } else { %>
+        <span style="color: red">Esgotado</span>
+        <% } %> | <a href="/gerencia_carros/<%= carro._id %>">Gerenciar</a>
+      </li>
+      <% }) %>
+    </ul>
+    <% } %>
+    <br />
+    <a href="/cadastrar_carro">Cadastrar Novo Carro</a>
+  </body>
+</html>
