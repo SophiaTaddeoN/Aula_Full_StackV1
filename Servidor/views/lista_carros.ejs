@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Lista de Carros</title>
@@ -9,31 +9,37 @@
     />
   </head>
   <body>
-    <h1>Carros Disponíveis</h1>
-    <% if (carros.length === 0) { %>
-    <p>Nenhum carro cadastrado.</p>
-    <% } else { %>
-    <ul>
-      <% carros.forEach(function(carro) { %>
-      <li>
-        <strong><%= carro.marca %> <%= carro.modelo %></strong> - Qtde
-        disponível: <%= carro.qtde_disponivel %> <% if (carro.qtde_disponivel >
-        0) { %>
-        <form
-          action="/vender_carro/<%= carro._id %>"
-          method="POST"
-          style="display: inline"
-        >
-          <button type="submit">Vender</button>
-        </form>
-        <% } else { %>
-        <span style="color: red">Esgotado</span>
-        <% } %> | <a href="/gerencia_carros/<%= carro._id %>">Gerenciar</a>
-      </li>
-      <% }) %>
-    </ul>
+    <a href="/listar_carros">Listar</a>
+    <a href="/Projetos_Passados/Update_Delete/cadastro_carro.html">Cadastrar</a>
+    <a href="/Projetos_Passados/Update_Delete/atualizacao_carro.html"
+      >Atualizar</a
+    >
+    <a href="/Projetos_Passados/Update_Delete/remocao_carro.html">Remover</a>
+
+    <h2>Lista de carros atual:</h2>
+
+    <% for (var i = 0; i < carros.length; i++) { %>
+    <div id="item_lista">
+      <p>Marca: <%= carros[i].db_marca %></p>
+      <p>Modelo: <%= carros[i].db_modelo %></p>
+      <p>Ano: <%= carros[i].db_ano %></p>
+      <p>
+        Qtde Disponível: <% if (carros[i].db_qtde_disponivel == 0) { %>
+        <strong>Esgotado</strong>
+        <% } else { %> <%= carros[i].db_qtde_disponivel %> <% } %>
+      </p>
+
+      <% if (carros[i].db_qtde_disponivel > 0) { %>
+      <form action="/vender_carro" method="post" style="display: inline">
+        <input type="hidden" name="id" value="<%= carros[i]._id %>" />
+        <button type="submit">Vender</button>
+      </form>
+      <% } else { %>
+      <button disabled>Vender</button>
+      <% } %>
+
+      <br />
+    </div>
     <% } %>
-    <br />
-    <a href="/cadastrar_carro">Cadastrar Novo Carro</a>
   </body>
 </html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="/Projetos_Passados/Create_Read/Aula11style.css"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div><h1>Cadastrar Post</h1></div>
+    <div class="centro">
+      <form action="/cadastrar_post" method="POST">
+        <div class="gap">
+          <label>Título:</label>
+          <input type="text" name="titulo" required /><br />
+        </div>
+        <div class="gap">
+          <label>Resumo:</label>
+          <input type="text" name="resumo" required /><br />
+        </div>
+        <div class="gap">
+          <label>Conteúdo:</label> <textarea name="conteudo" required></textarea
+          ><br />
+        </div>
+
+        <button type="submit">Postar</button>
+      </form>
+    </div>
+  </body>
+</html>

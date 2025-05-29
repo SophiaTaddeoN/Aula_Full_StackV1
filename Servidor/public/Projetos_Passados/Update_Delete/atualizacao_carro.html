@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Atualizar Carro</title>
+    <link rel="stylesheet" href="Aula12style.css" />
+  </head>
+  <body>
+    <a href="/listar_usuarios">Listar</a>
+
+    <a href="cadastro.html">Cadastrar</a>
+    <a href="login.html">Logar</a>
+    <a href="atualizacao.html">Mudar senha</a>
+    <a href="remocao.html">Remover</a>
+    <a href="/listar_carros">Listar carros</a>
+    <a href="cadastro_carro.html">Cadastrar carro</a>
+    <a href="atualizacao_carro.html">Atualizar carro</a>
+    <a href="remocao_carro.html">Remover carro</a>
+
+    <h1>Atualizar carro!</h1>
+
+    <form action="/atualizar_carro" method="post">
+      Marca: <input type="text" name="marca" required /> Modelo:
+      <input type="text" name="modelo" required /> Novo Ano:
+      <input type="number" name="ano" required /> Nova Qtde Disponível:
+      <input type="number" name="qtde_disponivel" required />
+      <br />
+      <input type="submit" value="Enviar" />
+    </form>
+  </body>
+</html>

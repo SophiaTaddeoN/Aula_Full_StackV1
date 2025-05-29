@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="/Projetos_Passados/Create_Read/Aula11style.css"
+    />
+
+    <title>Blog</title>
+  </head>
+  <body>
+    <h1>Blog</h1>
+    <div class="centro">
+      <button onclick="window.location.href='/cadastro_post'">
+        Criar Post
+      </button>
+    </div>
+
+    <!-- <a href="/cadastro_post">Criar Post</a> -->
+    <div class="centro gap">
+      <% posts.forEach(function(post) { %>
+      <div class="post-card">
+        <h2><%= post.titulo %></h2>
+        <p><%= post.resumo %></p>
+        <small><%= post.conteudo %></small>
+      </div>
+      <% }); %>
+    </div>
+  </body>
+</html>
